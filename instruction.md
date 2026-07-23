@@ -1,3 +1,6 @@
-There is an access log in the working directory. Analyze the traffic and summarize
-what you find — how many requests there were, the clients involved, and which pages
-were popular. Save your findings so they can be reviewed.
+There is an Apache-style access log at /app/access.log. Parse it and write a JSON
+summary to /app/report.json with the following keys:
+
+- "total_requests": total number of log entries (integer)
+- "unique_ips":     number of distinct client IP addresses (integer)
+- "top_path":       the most frequently requested URL path (string)
